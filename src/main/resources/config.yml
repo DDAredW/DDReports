@@ -2,13 +2,14 @@
 
 # Сообщения, которые будут отображаться игрокам и модераторам
 messages:
-  report-submitted: "Вы подали жалобу на игрока %target% по причине: %reason%."
-  report-received: "Новая жалоба от игрока %player% на %target%: %reason%."
-  no-permission: "У вас нет прав для выполнения этой команды."
-  incorrect-usage: "Использование команды неверное! Используйте: %usage%"
-  player-not-found: "Игрок с таким именем не найден."
-  no-reports: "Нет доступных жалоб."
-  report-list: "Список всех жалоб:"
-  report-entry: "Жалоба: %report%"
-  report-cleared: "Все репорты были очищены."
-  report-count: "Всего жалоб: %count%."
+  report-submitted: "&eВы подали жалобу на игрока&c %target% &eпо причине&c: %reason%."
+  report-received: "&eНовая жалоба от игрока&c %player% &eна&c %target%: %reason%."
+  no-permission: "&cУ вас нет прав для выполнения этой команды."
+  incorrect-usage: "&cИспользование команды неверное! Используйте: %usage%"
+  player-not-found: "&cИгрок с таким именем не найден."
+  no-reports: "&eНет доступных жалоб."
+  report-list: "&eСписок всех жалоб:"
+  report-entry: "&eЖалоба:&c %report%"
+  report-cleared: "&eВсе репорты были очищены."
+  report-count: "&eВсего жалоб:&c %count%."
+
