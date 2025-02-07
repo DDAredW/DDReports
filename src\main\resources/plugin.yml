@@ -1,0 +1,20 @@
+name: DDReports
+main: lunadev.ddreports.DDReports
+version: '1.0'
+api-version: '1.16'
+author: [Lunatik]
+commands:
+  report:
+    description: Подать жалобу на игрока.
+    usage: /report <ник> <причина>
+  reports:
+    description: Проверить список репортов или очистить их.
+    usage: /reports [clear]
+    permission: ddreports.view
+permissions:
+  ddreports.view:
+    description: Позволяет видеть список репортов.
+    default: op
+  ddreports.manage:
+    description: Позволяет очищать репорты.
+    default: op
