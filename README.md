@@ -1,41 +1,46 @@
-[RU]
-DDReports – Система жалоб для Minecraft
+[RU) 
+DDReports – плагин жалоб для Minecraft
+
 Описание:
-DDReports – это плагин для Minecraft серверов, позволяющий игрокам подавать жалобы на других игроков, а модераторам – просматривать и управлять ими. Игроки могут использовать команду /report <ник> <причина>, а модераторы могут просматривать репорты через команду /reports и очищать их с помощью /reports clear.
+DDReports позволяет игрокам подавать жалобы, а модераторам – управлять ими.
 
-Основные функции:
+Команды:
 
-Подать жалобу: Игроки подают жалобы на других с помощью /report <ник> <причина>.
-Просмотр жалоб: Модераторы просматривают репорты с помощью /reports.
-Очистка репортов: Администраторы могут очистить все жалобы командой /reports clear.
-Настройки сообщений: Все сообщения настраиваются в config.yml.
-Совместимость: Работает на сервере Minecraft 1.16.5 и выше. Требуется Java 8 и выше.
+/report <ник> <причина> – подать жалобу (доступно всем)
 
-Почему использовать DDReports:
-DDReports помогает поддерживать порядок на сервере, предоставляя простой и удобный способ подачи и управления жалобами.
+/reports – просмотреть жалобы (ddreports.view)
 
-Команда	/ Описание	/ Права
-/report <ник> <причина>	Подать жалобу на игрока	Без прав (доступно всем)
-/reports	Посмотреть список репортов	ddreports.view
-/reports clear	Очистить все репорты	ddreports.manage
+/reports clear – очистить жалобы (ddreports.manage)
+
+
+Функции:
+✔ Настраиваемые сообщения (config.yml)
+✔ Настраиваемая задержа перед отправкой следующей жалобы
+✔ Упрощенное модераторство
+✔ Поддержка Minecraft 1.16.5+ (Java 8+)
+
+DDReports – порядок на сервере без лишних усилий!
+
+
 
 [EN]
-DDReports – Reporting System for Minecraft
+DDReports – Complaint Plugin for Minecraft
+
 Description:
-DDReports is a Minecraft server plugin that allows players to report other players, and moderators to view and manage them. Players can use the /report <nickname> <reason> command, and moderators can view reports via the /reports command and clear them with /reports clear.
+DDReports allows players to submit complaints and moderators to manage them.
 
-Main Features:
+Commands:
 
-File a Report: Players report others with /report <nickname> <reason>.
-View Reports: Moderators view reports with /reports.
-Clear Reports: Admins can clear all reports with the /reports clear command.
-Message Settings: All messages are configurable in config.yml.
-Compatibility: Works on Minecraft 1.16.5 and above. Requires Java 8 and above.
+/report <nickname> <reason> – submit a complaint (available to all)
 
-Why use DDReports:
-DDReports helps keep your server in order by providing an easy and convenient way to submit and manage complaints.
+/reports – view complaints (ddreports.view)
 
-Command / Description / Rights
-/report <nickname> <reason> File a complaint against a player Without rights (available to everyone)
-/reports View the list of reports ddreports.view
-/reports clear Clear all reports ddreports.manage
+/reports clear – clear all complaints (ddreports.manage)
+
+
+Features:
+✔ Customizable messages (config.yml)
+✔ Configurable cooldown between reports
+✔ Simplified moderation
+✔ Supports Minecraft 1.16.5+ (Java 8+)
+
