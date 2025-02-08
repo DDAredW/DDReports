@@ -6,16 +6,17 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
 import java.util.Arrays;
 
 public class ReportCommand implements CommandExecutor {
     private final ReportManager reportManager;
     private final DDReports plugin;
+    private final CooldownManager cooldownManager;
 
     public ReportCommand(ReportManager reportManager, DDReports plugin) {
         this.reportManager = reportManager;
         this.plugin = plugin;
+        this.cooldownManager = new CooldownManager(plugin);
     }
 
     @Override
@@ -25,22 +26,34 @@ public class ReportCommand implements CommandExecutor {
             return true;
         }
 
-        if (args.length < 2) {
-            sender.sendMessage(plugin.format(plugin.getConfig().getString("messages.incorrect-usage").replace("%usage%", "/report <ник> <причина>")));
+        Player reporter = (Player) sender;
+
+        // Проверка cooldown
+        if (cooldownManager.hasCooldown(reporter.getUniqueId())) {
+            long remainingTime = cooldownManager.getRemainingTime(reporter.getUniqueId()) / 1000;
+            reporter.sendMessage(plugin.format(plugin.getConfig().getString("messages.cooldown")
+                    .replace("%time%", String.valueOf(remainingTime))));
             return true;
         }
 
-        Player reporter = (Player) sender;
+        if (args.length < 2) {
+            sender.sendMessage(plugin.format(plugin.getConfig().getString("messages.incorrect-usage")
+                    .replace("%usage%", "/report <ник> <причина>")));
+            return true;
+        }
+
         Player target = Bukkit.getPlayer(args[0]);
+
         if (target == null) {
             reporter.sendMessage(plugin.format(plugin.getConfig().getString("messages.player-not-found")));
             return true;
         }
 
-        // Собираем причину жалобы, начиная с индекса 1 до конца массива аргументов
         String reason = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
-
         reportManager.addReport(reporter.getName(), target.getName(), reason);
+
+        // Установка cooldown
+        cooldownManager.setCooldown(reporter.getUniqueId());
 
         reporter.sendMessage(plugin.format(plugin.getConfig().getString("messages.report-submitted")
                 .replace("%target%", target.getName())
