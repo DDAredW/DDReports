@@ -7,9 +7,7 @@ DDReports позволяет игрокам подавать жалобы, а м
 Команды:
 
 /report <ник> <причина> – подать жалобу (доступно всем)
-
 /reports – просмотреть жалобы (ddreports.view)
-
 /reports clear – очистить жалобы (ddreports.manage)
 
 
@@ -32,9 +30,7 @@ DDReports allows players to submit complaints and moderators to manage them.
 Commands:
 
 /report <nickname> <reason> – submit a complaint (available to all)
-
 /reports – view complaints (ddreports.view)
-
 /reports clear – clear all complaints (ddreports.manage)
 
 
