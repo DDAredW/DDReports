@@ -28,7 +28,6 @@ public class ReportCommand implements CommandExecutor {
 
         Player reporter = (Player) sender;
 
-        // Проверка cooldown
         if (cooldownManager.hasCooldown(reporter.getUniqueId())) {
             long remainingTime = cooldownManager.getRemainingTime(reporter.getUniqueId()) / 1000;
             reporter.sendMessage(plugin.format(plugin.getConfig().getString("messages.cooldown")
@@ -52,7 +51,6 @@ public class ReportCommand implements CommandExecutor {
         String reason = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
         reportManager.addReport(reporter.getName(), target.getName(), reason);
 
-        // Установка cooldown
         cooldownManager.setCooldown(reporter.getUniqueId());
 
         reporter.sendMessage(plugin.format(plugin.getConfig().getString("messages.report-submitted")
